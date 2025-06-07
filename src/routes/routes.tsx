@@ -1,5 +1,6 @@
 // routes.tsx
 import App from '@app/App';
+import ServiceMenuPage from '@app/pages/ServiceMenuPage';
 import ProfilePage from '@app/pages/ProfilePage';
 import ErrorPage from '@pages/ErrorPage';
 import SplashPage from '@pages/SplashPage';
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: 'splash',
         element: <SplashPage />
+      },
+      {
+        path: 'service',
+        element: <ServiceMenuPage />
       },
       {
         path: 'profile',
