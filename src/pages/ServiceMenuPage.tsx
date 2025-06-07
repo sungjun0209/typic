@@ -1,3 +1,4 @@
+import { MdOutlineArrowForwardIos, MdOutlineArrowBackIos } from "react-icons/md";
 import { serviceMenuData } from "@app/constants/serviceMenuData";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -22,9 +23,24 @@ const ServiceMenuPage = () => {
                     <div key={index_st} className={`w-full h-full flex flex-col justify-between ${present === index_st ? 'flex' : "hidden"}`}
                         style={{ backgroundColor: item.bgColor }}
                     >
-                        <div className={`h-2/3 flex items-center justify-center  bg-[${item.bgColor}]`}>
+                        <div className={`h-2/3 flex items-center justify-center bg-[${item.bgColor}] relative`}>
+                            {
+                                index_st !== 0 ?
+                                    <button onClick={() => setPresent(index_st - 1)} className="absolute left-[0px] top-1/2 border-none rounded-[5px] bg-transparent hover:brightness-75 ">
+                                        <MdOutlineArrowBackIos size={50} color="gray" className="cursor-pointer" />
+                                    </button>
+                                    : null
+                            }
                             <img key={index_st} src={item.src} className="w-full" />
+                            {
+                                index_st !== serviceMenuData.length - 1 ?
+                                    <button onClick={() => setPresent(index_st + 1)} className="absolute right-[0px] top-1/2 border-none rounded-[5px] bg-transparent hover:brightness-75">
+                                        <MdOutlineArrowForwardIos size={50} color="gray" className="cursor-pointer" />
+                                    </button>
+                                    : null
+                            }
                         </div>
+
                         <div className="w-full h-3/7 flex flex-col items-center justify-between bg-[#ffffff] rounded-t-[10px] pt-[32px] p-[20px] shadow-[10px]">
                             <div className="flex flex-col items-center gap-[16px]">
                                 <h2>{item.title}</h2>
