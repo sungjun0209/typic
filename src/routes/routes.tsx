@@ -1,5 +1,7 @@
 // routes.tsx
 import App from '@app/App';
+import ChatPage from '@app/pages/ChatPage';
+import ListPage from '@app/pages/ListPage';
 import ProfilePage from '@app/pages/ProfilePage';
 import ErrorPage from '@pages/ErrorPage';
 import SplashPage from '@pages/SplashPage';
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
       {
         path: 'profile',
         element: <ProfilePage />
+      },
+      {
+        path: 'list',
+        element: <ListPage />
+      },
+      {
+        path: 'chat',
+        element: <ChatPage />
       }
     ]
   }
