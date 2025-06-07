@@ -27,7 +27,7 @@ export default function SplashPage() {
                             </p>
                         </div>
                         <button onClick={handleStartButtonClick} className="w-[100px] h-[36px] rounded-[12px] outline-none border-none">
-                            <span className="text-[#5D79F4] font-bold">시작하기</span>
+                            <span className="text-[#5D79F4] font-[700]">시작하기</span>
                         </button>
                     </div>
                 </div>
