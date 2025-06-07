@@ -4,6 +4,7 @@
 // import type { UserInfo } from "../types/user";
 import { useState } from "react";
 import { useUser } from "../contexts/UserContext";
+import { useNavigate } from "react-router-dom";
 
 export default function ProfilePage() {
   const [name, setName] = useState("");
@@ -11,6 +12,7 @@ export default function ProfilePage() {
   const [gender, setGender] = useState("남성");
   const [mbti, setMbti] = useState("");
   const { setUser } = useUser(); // Context에서 전역 저장 함수만 가져옴
+  const navigate = useNavigate();
 
   const handleSubmit = () => {
     const userData = {
@@ -21,6 +23,8 @@ export default function ProfilePage() {
       image: null,
     };
     setUser(userData); // 전역 상태로 저장
+
+    navigate('/list');
   };
 
 // export default function ProfilePage() {

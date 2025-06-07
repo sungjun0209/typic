@@ -55,7 +55,7 @@ export default function ListPage() {
             <div className="w-full flex justify-end">
                 <div onClick={handleNewChatButtonClick} className="w-[100px] h-[40px] flex justify-center items-center bg-[#5470F4] rounded-[4px] gap-[4px] cursor-pointer">
                     <img className="w-[24px] h-[24px] object-contain" src={AddIcon} />
-                    <span className="text-[#FFF] font-[700] pt-[2px]">새 채팅</span>
+                    <span className="text-[#FFF] font-[700]">새 채팅</span>
                 </div>
             </div>
             <div className="h-[20px]"></div>
