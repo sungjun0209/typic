@@ -19,18 +19,18 @@ const ServiceMenuPage = () => {
         <div className="w-full h-full">
             {
                 serviceMenuData.map((item, index_st) => (
-                    <div key={index_st} className={`asdsad w-full h-full flex flex-col justify-between ${present === index_st ? 'flex' : "hidden"}`}
+                    <div key={index_st} className={`w-full h-full flex flex-col justify-between ${present === index_st ? 'flex' : "hidden"}`}
                         style={{ backgroundColor: item.bgColor }}
                     >
                         <div className={`h-2/3 flex items-center justify-center  bg-[${item.bgColor}]`}>
                             <img key={index_st} src={item.src} className="w-full" />
                         </div>
-                        <div className="w-full h-1/3 flex flex-col items-center justify-between bg-[#ffffff] rounded-t-[10px] p-[20px] shadow-[10px]">
-                            <div className="flex flex-col items-center gap-[10px]">
+                        <div className="w-full h-3/7 flex flex-col items-center justify-between bg-[#ffffff] rounded-t-[10px] pt-[32px] p-[20px] shadow-[10px]">
+                            <div className="flex flex-col items-center gap-[16px]">
                                 <h2>{item.title}</h2>
-                                <p className="text-[13px] text-[#666666] whitespace-pre-line">{item.description}</p>
+                                <p className="leading-[22px] text-[15px] text-[#666666] whitespace-pre-line">{item.description}</p>
                             </div>
-                            <div className="w-full flex flex-col items-center gap-[10px]">
+                            <div className="w-full flex flex-col items-center gap-[12px]">
                                 <div className="w-full flex itmes-center justify-center gap-[5px]">
                                     {
                                         serviceMenuData.map((_, index_nd) => (
