@@ -11,7 +11,7 @@ export default function ListPage() {
     }
 
     function handleNewChatButtonClick() {
-        navigate('/chat');
+        navigate('/service');
     }
 
     function handleProfileClick() {

@@ -1,12 +1,18 @@
 import { serviceMenuData } from "@app/constants/serviceMenuData";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ServiceMenuPage = () => {
+    const navigate = useNavigate();
     const [present, setPresent] = useState<number>(0);
 
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         const id = e.currentTarget.id;
         setPresent(Number(id));
+    }
+
+    function handleSelectButtonClick() {
+        navigate('/chat');
     }
 
     return (
@@ -33,7 +39,7 @@ const ServiceMenuPage = () => {
                                     }
                                 </div>
 
-                                <button className="w-full h-[50px] bg-[#3c388f] border-none rounded-[10px] text-[#ffffff] text-[15px] font-bold">
+                                <button onClick={handleSelectButtonClick} className="w-full h-[50px] bg-[#3c388f] border-none rounded-[10px] text-[#ffffff] text-[15px] font-bold">
                                     선택
                                 </button>
                             </div>
