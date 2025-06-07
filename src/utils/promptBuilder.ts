@@ -1,9 +1,9 @@
-import type { UserInfo } from "../types/user";
+import type { UserInfo } from "@app/store/userInfoStore";
 
 export function buildPrompt(user: UserInfo): string {
   return `
 A Ghibli-style portrait of a person.
-The person is a ${user.age}-year-old ${user.gender === "남" ? "male" : "female"} with an MBTI of ${user.mbti}.
+They are a ${user.gender === "남성" ? "male" : "female"} born in ${user.birth}, with the MBTI type ${user.mbti}.
 Please generate an image based on this description.
   `.trim();
 }
