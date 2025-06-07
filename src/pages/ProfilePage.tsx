@@ -1,23 +1,19 @@
-// import { useState } from "react";
-// import { buildPrompt } from "../utils/promptBuilder";
-// import { fetchChatResponse } from "../services/openai";
-// import type { UserInfo } from "../types/user";
 import { useState } from "react";
-import { useUser } from "../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
+import { useUserStore, type UserInfo } from "@app/store/userInfoStore";
 
 export default function ProfilePage() {
   const [name, setName] = useState("");
   const [birth, setBirth] = useState("");
   const [gender, setGender] = useState("남성");
   const [mbti, setMbti] = useState("");
-  const { setUser } = useUser(); // Context에서 전역 저장 함수만 가져옴
+  const { setUser } = useUserStore();
   const navigate = useNavigate();
 
   const handleSubmit = () => {
-    const userData = {
+    const userData: UserInfo = {
       name,
-      age: birth.split("-")[0],
+      birth: birth.split("-")[0] ?? '',
       gender,
       mbti,
       image: null,

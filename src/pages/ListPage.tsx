@@ -2,9 +2,11 @@ import ProfileImg from '@assets/images/profile.png';
 import BannerImg from '@assets/images/mbti_banner.png';
 import AddIcon from '@assets/images/icons/add_icon.png';
 import { useNavigate } from 'react-router-dom';
+import { useUserStore } from '@app/store/userInfoStore';
 
 export default function ListPage() {
     const navigate = useNavigate();
+    const { user } = useUserStore();
 
     function handleStartButtonClick() {
         window.open('https://www.16personalitylab.com/', '_blank');
@@ -23,7 +25,7 @@ export default function ListPage() {
             <div className="grid grid-cols-[1fr_auto]">
                 <div>
                     <p>
-                        <span className="text-[#444851] text-[14px] font-[700]">User123님</span>
+                        <span className="text-[#444851] text-[14px] font-[700]">{user.name}님</span>
                         <span className="text-[#878A93] text-[14px] font-[600]">, 환영합니다</span>
                     </p>
                     <h2 className="text-[#020F17] text-[24px]">Your storage</h2>

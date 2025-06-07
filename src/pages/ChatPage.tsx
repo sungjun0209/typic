@@ -1,5 +1,9 @@
+import InputForm from "@app/components/InputForm";
+
 export default function ChatPage() {
     return (
-        <div>채팅방 페이지 입니다.</div>
+        <div className="p-[16px]">
+            <InputForm />
+        </div>
     );
 }

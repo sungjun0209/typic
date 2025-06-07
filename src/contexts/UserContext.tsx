@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import type { UserInfo } from "../types/user";
 
-const defaultUser: UserInfo = {
+export const defaultUser: UserInfo = {
   name: "",
   age: "",
   gender: "남성",
