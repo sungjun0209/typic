@@ -4,8 +4,9 @@ import ChatPage from '@app/pages/ChatPage';
 import ListPage from '@app/pages/ListPage';
 import ServiceMenuPage from '@app/pages/ServiceMenuPage';
 import ProfilePage from '@app/pages/ProfilePage';
+import SplashPage from '@app/pages/SplashPage';
 import ErrorPage from '@pages/ErrorPage';
-import SplashPage from '@pages/SplashPage';
+// import SplashPage from '@pages/SplashPage';
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 
 const router = createBrowserRouter([

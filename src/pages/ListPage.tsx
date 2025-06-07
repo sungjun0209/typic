@@ -2,16 +2,18 @@ import ProfileImg from '@assets/images/profile.png';
 import BannerImg from '@assets/images/mbti_banner.png';
 import AddIcon from '@assets/images/icons/add_icon.png';
 import { useNavigate } from 'react-router-dom';
+import { useUserStore } from '@app/store/userInfoStore';
 
 export default function ListPage() {
     const navigate = useNavigate();
+    const { user } = useUserStore();
 
     function handleStartButtonClick() {
         window.open('https://www.16personalitylab.com/', '_blank');
     }
 
     function handleNewChatButtonClick() {
-        navigate('/chat');
+        navigate('/service');
     }
 
     function handleProfileClick() {
@@ -23,7 +25,7 @@ export default function ListPage() {
             <div className="grid grid-cols-[1fr_auto]">
                 <div>
                     <p>
-                        <span className="text-[#444851] text-[14px] font-[700]">User123님</span>
+                        <span className="text-[#444851] text-[14px] font-[700]">{user.name}님</span>
                         <span className="text-[#878A93] text-[14px] font-[600]">, 환영합니다</span>
                     </p>
                     <h2 className="text-[#020F17] text-[24px]">Your storage</h2>
@@ -55,7 +57,7 @@ export default function ListPage() {
             <div className="w-full flex justify-end">
                 <div onClick={handleNewChatButtonClick} className="w-[100px] h-[40px] flex justify-center items-center bg-[#5470F4] rounded-[4px] gap-[4px] cursor-pointer">
                     <img className="w-[24px] h-[24px] object-contain" src={AddIcon} />
-                    <span className="text-[#FFF] font-[700] pt-[2px]">새 채팅</span>
+                    <span className="text-[#FFF] font-[700]">새 채팅</span>
                 </div>
             </div>
             <div className="h-[20px]"></div>
